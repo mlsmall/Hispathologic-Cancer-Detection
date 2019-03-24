@@ -15,9 +15,9 @@ The goal is to correctly predict the label (positive or negative) for the images
 
 Here's an example of a sample tissue with a 32x32 boudary box.
 
-<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissue.png" width="150" />
+<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissue.png" width="180" />
 
-So you can see the variety of histopathologic scans here 64 different tissue samples.
+Here is a variety of histopathologic scans with 64 different tissue samples.
 
 <img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissues.png" width='600' />
 
@@ -36,5 +36,7 @@ To create the databunch, we first define the type of augmentation we would like 
 We will flip the images horizontally, vertically, add a little bit of brightness, zoom and lighting. For more information on doing data augmentation with the fastai library, refer to [this link](https://docs.fast.ai/vision.transform.html#Data-augmentation).
 
 The code used is:
-'tfms=get_transforms(do_flip=True, flip_vert=True, max_rotate=45, max_zoom=0.15,
+'''python
+tfms=get_transforms(do_flip=True, flip_vert=True, max_rotate=45, max_zoom=0.15,
                max_lighting=0.5, max_warp=0., p_affine=0.5, p_lighting=0.50)'
+'''
