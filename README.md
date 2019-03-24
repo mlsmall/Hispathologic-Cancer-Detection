@@ -452,6 +452,7 @@ Afer training and fine-tuning the model, the accuracy came out to be 97.5%.
 learn.fit_one_cycle(5, slice(lr))
 ```
 epoch| 	train_loss |	valid_loss 	|accuracy |	auc_score
+---|---|---|---|---
 1 	|    0.214574 	|  0.169072 	|  0.936006 |	0.982477
 2 	|    0.177719 	|  0.139814 | 	0.950459 |	0.985624
 3 	|    0.157940 | 	0.130150 	 | 0.954004 	|0.987729
@@ -461,9 +462,10 @@ epoch| 	train_loss |	valid_loss 	|accuracy |	auc_score
 ```python
 learn.fit_one_cycle(2, slice(1e-6,1e-5))
 ```
-epoch 	train_loss 	valid_loss 	accuracy 	auc_score
-1 	    0.082385 	  0.075018 	  0.976366 	0.995310
-2     	0.084545 	  0.074588 	  0.975002 	0.995529
+epoch| 	train_loss |	valid_loss |	accuracy |	auc_score
+---|---|---|---|---
+1 	|    0.082385 	|  0.075018 	|  0.976366 	|0.995310
+2   |  	0.084545 |	  0.074588 	|  0.975002 |	0.995529
 
 # Model Classification Interpretation
 
