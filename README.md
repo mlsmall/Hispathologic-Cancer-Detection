@@ -36,7 +36,8 @@ To create the databunch, we first define the type of augmentation we would like 
 We will flip the images horizontally, vertically, add a little bit of brightness, zoom and lighting. For more information on doing data augmentation with the fastai library, refer to [this link](https://docs.fast.ai/vision.transform.html#Data-augmentation).
 
 The code used is:
-'''python
+```python
 tfms=get_transforms(do_flip=True, flip_vert=True, max_rotate=45, max_zoom=0.15,
                max_lighting=0.5, max_warp=0., p_affine=0.5, p_lighting=0.50)'
-'''
+```
+
