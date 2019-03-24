@@ -41,3 +41,23 @@ tfms=get_transforms(do_flip=True, flip_vert=True, max_rotate=45, max_zoom=0.15,
                max_lighting=0.5, max_warp=0., p_affine=0.5, p_lighting=0.50)'
 ```
 
+### Defining The Validation Set
+
+The validation set is set up to be 5% of the training set.
+```python
+valid_size = int(.05 *len(dftrain))  # dftrain was defined earlier in the code to be the training set dataframe
+valid_idx = range((len(dftrain) - valid_size), len(dftrain)) # validation index range
+```
+
+### The Databunch
+One the validation set size and image augmentations are defined, the databunch can be created.
+```python
+data = (ImageItemList.from_csv(path, 'train_labels.csv', folder='Train', suffix='.tif')
+        .split_by_idx(valid_idx)  # validation set
+        .label_from_df(columns='label') # the data is labeled from the train_labels.csv file
+        .add_test_folder('Test') # specify the directroy where the test set images are located
+        .transform(tfms, size=224) # data augmentation and image size of the transformations
+        .databunch()
+        .normalize(imagenet_stats)) # normalizing the data using the mean and the standard deviation
+```
+
