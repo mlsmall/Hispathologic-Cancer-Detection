@@ -15,8 +15,12 @@ The goal is to correctly predict the label (positive or negative) for the images
 
 Here's an example of a sample tissue with a 32x32 boudary box.
 
-<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissue.png" width="200" />
+<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissue.png" width="150" />
 
 And here's a picture of 64 different tissue samples.
 
-<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissues.png" width='400' />
+<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissues.png" width='600' />
+
+Next is a plot of four hyspatholigic samples of lymph nodes with their corresponding positive labels (containing a tumor) and four samples with their negative labels (not containing a tumor).
+
+<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/positive%20and%20negative%20samples.png" width='600' />
