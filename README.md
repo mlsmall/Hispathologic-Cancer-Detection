@@ -23,4 +23,4 @@ And here's a picture of 64 different tissue samples.
 
 Next is a plot of four hyspatholigic samples of lymph nodes with their corresponding positive labels (containing a tumor) and four samples with their negative labels (not containing a tumor).
 
-<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/positive%20and%20negative%20samples.png" width='600' />
+<img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/positive%20and%20negative%20samples.png" width='1080' />
