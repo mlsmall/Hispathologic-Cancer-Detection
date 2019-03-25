@@ -1,7 +1,7 @@
-# Histhopalogic Cancer Detection
+# Histhopathologic Cancer Detection
 ## Identifing metastatic tissue in histopathologic scans of lymph node sections
 
-Histhopalogy refers to the microscopic examination of tissue in order to study the manifestations of disease. Lymph node metastases occur in most cancer types (e.g. breast, prostate, colon). Lymph nodes are small glands that filter lymph, the fluid that circulates through the lymphatic system. The lymph nodes in the underarms are the first place breast cancer is likely to spread. Metastatic involvement of lymph nodes is one of the most important prognostic variables in breast cancer. The diagnostic procedure for pathologists is, however, tedious and time-consuming and prone to misinterpretation. 
+Histhopathology refers to the microscopic examination of tissue in order to study the manifestations of disease. Lymph node metastases occur in most cancer types (e.g. breast, prostate, colon). Lymph nodes are small glands that filter lymph, the fluid that circulates through the lymphatic system. The lymph nodes in the underarms are the first place breast cancer is likely to spread. Metastatic involvement of lymph nodes is one of the most important prognostic variables in breast cancer. The diagnostic procedure for pathologists is tedious and time-consuming and prone to misinterpretation. 
 
 Automated detection of lymph node metastasis has a great potential to help the pathologist. Within the past few years, the field has been moving towards a fully automated analysis of whole-slide images to detect cancer, to predict prognosis or identify metastases. 
 
@@ -21,7 +21,7 @@ Here is a variety of histopathologic scans with 64 different tissue samples.
 
 <img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/sample%20tissues.png" width='600' />
 
-Next is a plot of four hyspatholigic samples of lymph nodes with their corresponding positive labels (containing a tumor) and four samples with their negative labels (not containing a tumor).
+Next is a plot of five histopathologic samples of lymph nodes with their corresponding positive labels (containing a tumor) and five samples with their negative labels (not containing a tumor).
 
 <img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/positive%20and%20negative%20samples.png" width='1080' />
 
@@ -65,7 +65,7 @@ data = (ImageItemList.from_csv(path, 'train_labels.csv', folder='Train', suffix=
 
 ### Model architecture and Transfer Learning
 
-To train this model we will use a technique called transfer learning where we will use a model trained on a very large dataset and then adapt it to our own dataset. Here we will use a pre-trained convolutional network model with ResNet 50 architecture. It comes pretrained from ImageNet so its weights have already been computed for us. It has already learned to recognize many features on all of its images, so we can benefit from this knowledge, instead of starting with a randomly initiliazed model.
+To train this model we will use a technique called transfer learning where we will use a model trained on a very large dataset and then adapt it to our own dataset. Here we will use a pre-trained convolutional network model with ResNet 50 architecture. It comes pre-trained from ImageNet so its weights have already been computed for us. It has already learned to recognize many features on all of its images, so we can benefit from this knowledge, instead of starting with a randomly initialized model.
 
 Here is what the ResNet 50 model architecture looks like:
 ```
@@ -447,7 +447,7 @@ Sequential(
 ```
 Notice the last layers in this model starting from AdaptiveConcatPool2d. They have replaced the last 2 layers in the ResNet 50 network. You can also see that the last layer has out_features=2, which corresponds to the 2 classes we have.
 
-Afer training and fine-tuning the model, the accuracy came out to be 97.5%.
+After training and fine-tuning the model, the accuracy came out to be 97.5%.
 ```python
 learn.fit_one_cycle(5, slice(lr))
 ```
