@@ -55,7 +55,7 @@ One the validation set size and image augmentations are defined, the databunch c
 data = (ImageItemList.from_csv(path, 'train_labels.csv', folder='Train', suffix='.tif')
         .split_by_idx(valid_idx)  # validation set
         .label_from_df(columns='label') # the data is labeled from the train_labels.csv file
-        .add_test_folder('Test') # specify the directroy where the test set images are located
+        .add_test_folder('Test') # specify the directory where the test set images are located
         .transform(tfms, size=224) # data augmentation and image size of the transformations
         .databunch()
         .normalize(imagenet_stats)) # normalizing the data using the mean and the standard deviation
@@ -477,7 +477,7 @@ inter = ClassificationInterpretation.from_learner(learn)
 ## Plotting Top Losses
 
 These are the images in the validation set that resulted with the highest loss after training. Above each image you'll see the predicted class (1 or 0), the actual class, the calculated loss, and the probability of the predicted class.
-```pyhton
+```python
 inter.plot_top_losses(9, figsize=(9,9))
 ```
 <img src="https://github.com/mlsmall/Hispathologic-Cancer-Detection/blob/master/plot%20top%20losses.png" width='600' />
